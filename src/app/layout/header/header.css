@@ -1,0 +1,13 @@
+header {
+	/* Tailwind utilities handle most layout, keep small fallback */
+}
+
+.theme-toggle {
+	background: transparent;
+	border: 1px solid rgba(0,0,0,0.12);
+	color: inherit;
+}
+
+.dark .theme-toggle {
+	border-color: rgba(255,255,255,0.12);
+}
