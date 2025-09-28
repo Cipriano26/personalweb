@@ -1,0 +1,8 @@
+<header class="p-4 bg-var text-var flex items-center justify-between">
+	<div class="logo">Mi sitio</div>
+	<div class="controls">
+		<button (click)="toggleTheme()" aria-label="Toggle theme" class="theme-toggle px-3 py-1 border rounded">
+			{{ isDark ? 'Light' : 'Dark' }}
+		</button>
+	</div>
+</header>

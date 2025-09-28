@@ -3,3 +3,21 @@
 @tailwind utilities;
 
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+	--color-bg: 255 255 255; /* use rgb byte triplet so we can use Tailwind 'rgb' utilities if needed */
+	--color-text: 17 24 39; /* gray-900 */
+}
+
+.dark {
+	--color-bg: 15 23 42; /* slate-900 */
+	--color-text: 241 245 249; /* slate-50 */
+}
+
+/* helper classes that use the CSS variables via rgb() */
+.bg-var {
+	background-color: rgb(var(--color-bg));
+}
+.text-var {
+	color: rgb(var(--color-text));
+}
