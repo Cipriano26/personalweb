@@ -1,1 +1,65 @@
-<p>blog works!</p>
+<!-- Hero: última entrada -->
+<div class="px-4 sm:px-6 lg:px-8" style="margin-top: 1rem;">
+  <div class="relative h-120 md:h-[80dvh] flex flex-col bg-cover bg-center bg-no-repeat rounded-2xl"
+       [style.background-image]="bg(latest)">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent rounded-2xl"></div>
+    <div class="relative mt-auto w-11/12 md:max-w-2xl ps-5 pb-5 md:ps-10 md:pb-10">
+      <span class="block text-white/90 text-sm">{{ latest?.date | date:'longDate' }}</span>
+      <h1 class="text-xl md:text-3xl lg:text-5xl text-white" [innerHTML]="latest?.title?.rendered"></h1>
+      <div class="mt-5" *ngIf="latest">
+        <a class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl bg-white border border-transparent text-black hover:bg-gray-100"
+           [routerLink]="linkFor(latest)">
+          Leer más
+        </a>
+      </div>
+    </div>
+  </div>
+ </div>
+<!-- End Hero -->
+
+<!-- Card Blog -->
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+    <!-- Title -->
+  <div class="max-w-2xl mb-10">
+    <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">Últimas entradas</h2>
+    <p class="mt-1 text-gray-600 dark:text-neutral-400">Novedades de la categoría seleccionada.</p>
+  </div>
+    <!-- End Title -->
+
+    <!-- Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+  <a *ngFor="let p of (posts | slice:0:4)" class="group block rounded-xl focus:outline-hidden" [routerLink]="linkFor(p)">
+      <div class="aspect-[16/9] overflow-hidden rounded-xl">
+        <img class="w-full h-full object-cover" [src]="featured(p) || 'https://placehold.co/560x315'" alt="Imagen del post" loading="lazy">
+      </div>
+      <h3 class="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 group-focus:text-blue-600 dark:text-neutral-300 dark:group-hover:text-white dark:group-focus:text-white" [innerHTML]="p.title.rendered"></h3>
+      <p class="mt-2 text-sm text-gray-600 dark:text-neutral-400">{{ p.date | date:'longDate' }}</p>
+    </a>
+    </div>
+    <!-- End Grid -->
+
+    <!-- Subcategorías del padre: secciones por subcategoría -->
+    <div *ngFor="let c of subcats" class="mt-12">
+      <div class="flex items-baseline justify-between mb-6">
+        <div>
+          <h3 class="text-xl font-semibold dark:text-white"><a [routerLink]="['/blog','cat', c?.id]" class="hover:underline">{{ c?.name }}</a></h3>
+          <p class="text-sm text-gray-600 dark:text-neutral-400" *ngIf="c?.description" [innerHTML]="c.description"></p>
+        </div>
+        <a class="text-sm text-blue-600 hover:underline" [routerLink]="['/blog','cat', c?.id]">Ver todo</a>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <a *ngFor="let p of (postsBySubcat[c?.id] | slice:0:4)" class="group block rounded-xl focus:outline-hidden" [routerLink]="linkFor(p)">
+          <div class="aspect-[16/9] overflow-hidden rounded-xl">
+            <img class="w-full h-full object-cover" [src]="featured(p) || 'https://placehold.co/560x315'" alt="Imagen del post" loading="lazy">
+          </div>
+          <h4 class="mt-2 text-base font-medium text-gray-800 group-hover:text-blue-600 group-focus:text-blue-600 dark:text-neutral-300 dark:group-hover:text-white dark:group-focus:text-white" [innerHTML]="p.title.rendered"></h4>
+          <p class="mt-2 text-sm text-gray-600 dark:text-neutral-400">{{ p.date | date:'longDate' }}</p>
+        </a>
+        <div *ngIf="!(postsBySubcat[c?.id]?.length)" class="col-span-full text-sm text-gray-500 dark:text-neutral-400">
+          No hay publicaciones en esta subcategoría todavía.
+        </div>
+      </div>
+    </div>
+</div>
+<!-- End Card Blog -->

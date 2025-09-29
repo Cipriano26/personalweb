@@ -11,11 +11,13 @@
 
             <!-- Buttons -->
             <div class="mt-7 grid gap-3 w-full sm:inline-flex">
-                <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-black text-white hover:bg-neutral-800 focus:outline-hidden focus:bg-neutral-800 disabled:opacity-50 disabled:pointer-events-none dark:bg-white dark:text-black dark:hover:bg-neutral-200 dark:focus:bg-neutral-200" href="#">
+                <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-black text-white hover:bg-neutral-800 focus:outline-hidden focus:bg-neutral-800 disabled:opacity-50 disabled:pointer-events-none dark:bg-white dark:text-black dark:hover:bg-neutral-200 dark:focus:bg-neutral-200"
+                    [routerLink]="'/proyectos'">
                 Trabajemos juntos
                 <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                 </a>
-                <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-2xs hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800" href="#">
+                <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-2xs hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+                    [routerLink]="'/aboutme'">
                 Hablemos
                 </a>
             </div>
@@ -70,7 +72,7 @@
                         </p>
                         <p class="mt-5">
                             <a class="inline-flex items-center gap-x-1 text-sm text-black decoration-2 hover:underline focus:outline-hidden focus:underline font-medium dark:text-white"
-                                href="#">
+                                [routerLink]="'/aboutme'">
                                 Un poco más sobre mí
                                 <svg class="shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1"
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -161,7 +163,8 @@
                 <!-- Grid -->
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Card -->
-                    <a class="group flex flex-col focus:outline-hidden" href="#">
+                    <a class="group flex flex-col focus:outline-hidden" 
+                        [routerLink]="['/projects']" [fragment]="'prichelco'">
                         <div class="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
                             <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl"
                                 src="https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80"
@@ -182,7 +185,7 @@
                             </p>
                             <p
                                 class="mt-5 inline-flex items-center gap-x-1 text-sm text-black decoration-2 group-hover:underline group-focus:underline font-medium dark:text-white">
-                                Leer mas
+                                Ver mas
                                 <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round">
@@ -194,7 +197,8 @@
                     <!-- End Card -->
             
                     <!-- Card -->
-                    <a class="group flex flex-col focus:outline-hidden" href="#">
+                    <a class="group flex flex-col focus:outline-hidden" 
+                        [routerLink]="['/projects']" [fragment]="'yateino'">
                         <div class="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
                             <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl"
                                 src="https://images.unsplash.com/photo-1542125387-c71274d94f0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80"
@@ -211,7 +215,7 @@
                             </p>
                             <p
                                 class="mt-5 inline-flex items-center gap-x-1 text-sm text-black decoration-2 group-hover:underline group-focus:underline font-medium dark:text-white">
-                                Leer mas
+                                Ver mas
                                 <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round">
@@ -224,14 +228,14 @@
             
                     <!-- Card -->
                     <a class="group relative flex flex-col w-full min-h-60 bg-[url('https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80')] bg-center bg-cover rounded-xl hover:shadow-lg focus:outline-hidden focus:shadow-lg transition"
-                        href="#">
+                        [routerLink]="['/projects']" [fragment]="'comunidades'">
                         <div class="flex-auto p-4 md:p-6">
                             <h3 class="text-xl text-white/90 group-hover:text-white"><span class="font-bold">Comunidades</span> Espacios que creé y administro. Todas con un mismo fin: servir, compartir y crecer juntos.</h3>
                         </div>
                         <div class="pt-0 p-4 md:p-6">
                             <div
                                 class="inline-flex items-center gap-2 text-sm font-medium text-white group-hover:text-white/70 group-focus:text-white/70">
-                                Leer mas
+                                Ver mas
                                 <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round">
@@ -253,7 +257,7 @@
                     <!-- Announcement Banner -->
                     <div class="flex justify-center">
                         <a class="inline-flex items-center gap-x-2 bg-white border border-gray-200 text-xs text-gray-600 p-2 px-3 rounded-full transition hover:border-gray-300 focus:outline-hidden focus:border-gray-300 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:hover:border-neutral-600 dark:focus:border-neutral-600"
-                            href="#">
+                            [routerLink]="'/projects'">
                             ¿Cómo podemos trabajar juntos?
                             <span class="flex items-center gap-x-1">
                                 <span
@@ -283,7 +287,7 @@
                     <!-- Buttons -->
                     <div class="mt-8 gap-3 flex justify-center">
                         <a class="inline-flex justify-center items-center gap-x-3 text-center bg-black hover:bg-neutral-800 focus:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-200 dark:focus:bg-neutral-200 border border-transparent text-white dark:text-black text-sm font-medium rounded-full py-3 px-4"
-                            href="#">
+                            href="https://web.whatsapp.com/send/?phone=541128173122&text=Hola+Cipriano%21" target="_blank" rel="noreferrer">
                             <svg class="shrink-0 size-4 text-green-500 dark:text-green-400" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                 fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M13.601 2.399A7.953 7.953 0 0 0 8 0C3.582 0 0 3.582 0 8c0 1.409.37 2.779 1.073 3.985L0 16l4.122-1.07A7.96 7.96 0 0 0 8 16c4.418 0 8-3.582 8-8 0-2.122-.827-4.116-2.399-5.601zM8 14.5c-1.313 0-2.594-.344-3.7-.995l-.263-.154-2.444.634.653-2.382-.17-.274A6.48 6.48 0 0 1 1.5 8c0-3.584 2.916-6.5 6.5-6.5 1.736 0 3.368.677 4.601 1.899A6.466 6.466 0 0 1 14.5 8c0 3.584-2.916 6.5-6.5 6.5zm3.654-4.548c-.2-.1-1.18-.581-1.363-.647-.183-.067-.317-.1-.45.1-.133.2-.515.647-.631.781-.117.133-.233.15-.433.05-.2-.1-.843-.31-1.606-.99-.594-.53-.997-1.18-1.115-1.38-.117-.2-.013-.308.088-.408.09-.09.2-.233.3-.35.1-.117.133-.2.2-.333.067-.133.033-.25-.017-.35-.05-.1-.45-1.087-.617-1.488-.163-.392-.329-.338-.45-.344l-.383-.007c-.133 0-.35.05-.533.25-.183.2-.7.683-.7 1.666 0 .983.717 1.933.817 2.067.1.133 1.41 2.15 3.417 2.933.478.165.85.263 1.14.336.479.122.915.105 1.26.064.384-.045 1.18-.482 1.347-.948.167-.466.167-.866.117-.948-.05-.083-.183-.133-.383-.233z"/>
@@ -308,7 +312,8 @@
                 <!-- Grid -->
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Card -->
-                    <a class="group block rounded-xl focus:outline-hidden" href="#">
+                    <a class="group block rounded-xl focus:outline-hidden" 
+                        [routerLink]="'/blog'">
                         <div class="h-48 overflow-hidden rounded-xl">
                             <img class="w-full h-full object-cover rounded-xl"
                                 src="https://images.unsplash.com/photo-1668869713519-9bcbb0da7171?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80"
@@ -325,7 +330,8 @@
                     <!-- End Card -->
 
                     <!-- Card -->
-                    <a class="group block rounded-xl focus:outline-hidden" href="#">
+                    <a class="group block rounded-xl focus:outline-hidden"
+                        [routerLink]="'/media'">
                         <div class="h-48 overflow-hidden rounded-xl">
                             <img class="w-full h-full object-cover rounded-xl"
                                 src="https://images.unsplash.com/photo-1668584054035-f5ba7d426401?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80"
@@ -342,7 +348,8 @@
                     <!-- End Card -->
 
                     <!-- Card -->
-                    <a class="group block rounded-xl focus:outline-hidden" href="#">
+                    <a class="group block rounded-xl focus:outline-hidden" 
+                        [routerLink]="'/contact'" [fragment]="'socials'">
                         <div class="h-48 overflow-hidden rounded-xl">
                             <img class="w-full h-full object-cover rounded-xl"
                                 src="https://images.unsplash.com/photo-1668863699009-1e3b4118675d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80"
@@ -359,7 +366,8 @@
                     <!-- End Card -->
 
                     <!-- Card -->
-                    <a class="group block rounded-xl focus:outline-hidden" href="#">
+                    <a class="group block rounded-xl focus:outline-hidden" 
+                        [routerLink]="'/aboutme'">
                         <div class="h-48 overflow-hidden rounded-xl">
                             <img class="w-full h-full object-cover rounded-xl"
                                 src="https://images.unsplash.com/photo-1668584054131-d5721c515211?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80"
@@ -367,10 +375,10 @@
                         </div>
                         <h3
                             class="mt-2 text-lg font-medium text-gray-800 group-hover:text-black group-focus:text-black dark:text-neutral-300 dark:group-hover:text-white dark:group-focus:text-white">
-                            Everything you need to know about Preline Pro.
+                            Sobre mí / Quién soy
                         </h3>
                         <p class="mt-2 text-sm text-gray-600 dark:text-neutral-400">
-                            September 12, 2022
+                           Un poco más de mi historia, mi fe y los proyectos que me apasionan.
                         </p>
                     </a>
                     <!-- End Card -->
