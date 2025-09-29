@@ -21,3 +21,35 @@
 .text-var {
 	color: rgb(var(--color-text));
 }
+
+/* Tipografía para contenido del blog (WordPress) */
+.prose {
+	@apply max-w-none;
+}
+
+/* Estilos para citas */
+.prose blockquote {
+	@apply border-l-4 border-gray-300 pl-4 italic text-gray-700 bg-gray-50 rounded-r-lg py-3 my-6;
+}
+.dark .prose blockquote {
+	@apply border-neutral-700 text-neutral-300 bg-neutral-900/40;
+}
+
+/* Asegurar que quotes dentro del blockquote se vean bien */
+.prose blockquote p:first-of-type::before {
+	content: "\201C";
+}
+.prose blockquote p:last-of-type::after {
+	content: "\201D";
+}
+
+/* Citas en línea */
+.prose q {
+	quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/* Compatibilidad con figuras que WP inserta a veces alrededor de blockquote */
+.prose figure.wp-block-quote,
+.prose .wp-block-quote {
+	@apply my-6;
+}
